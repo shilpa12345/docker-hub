@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        sh 'docker build -t ssm123/myapp123 .'
+        sh 'podman build -t ssm123/myapp123 .'
     }
 
     
