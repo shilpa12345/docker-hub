@@ -1,3 +1,5 @@
+pipeline {
+    agent any
 node {
     def app
 
@@ -10,7 +12,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        sh 'podman build -t ssm123/myapp123 .'
+        sh 'podman build -t ssm123/app .'
     }
 
     
@@ -26,4 +28,5 @@ node {
             } 
                 echo "Trying to Push Docker Build to registry"
     }
+}
 }
