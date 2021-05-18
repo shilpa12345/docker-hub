@@ -1,7 +1,6 @@
 pipeline {
     agent any
-node {
-    def app
+    stages {
 
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
@@ -19,14 +18,7 @@ node {
 
 	
     stage('Push image') {
-        /* 
-			You would need to first register with DockerHub before you can push images to your account
-		*/
-        docker.withRegistry('https://registry.hub.docker.com', 'ssm-docker') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
-            } 
-                echo "Trying to Push Docker Build to registry"
+        
     }
 }
 }
